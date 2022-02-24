@@ -1,0 +1,440 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial Narrow', Arial, sans-serif;
+    overflow-wrap: break-word;
+
+}
+
+
+.sign-up-page{
+    width: 100%;
+    height: 844px;
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    width: 100%;  
+    min-height: auto;
+}
+
+.sign-up-form-layer-one{
+    width: 100%;
+    min-width: 45vw;
+    padding: 16px;
+}
+
+.sign-up-form-layer-two{
+    width: 100%;
+    padding: 20px;
+}
+
+svg {
+    padding-bottom: 12px;
+    color: rgb(29, 155, 240);
+}
+
+.heading {
+    font-size: 40px;
+    color: rgb(15, 20, 25);
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    letter-spacing: -0.8px;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow-wrap: break-word;
+}
+
+
+.join-twitter-heading {
+    margin-bottom: 20px;
+    font-size:23px;
+    font-weight: 700;
+    overflow-wrap: break-word;
+}
+
+.button{
+    width: 300px;
+    height: 40px;
+    margin-bottom: 8px;
+    border-radius: 9999px;
+}
+
+.google-sign-up{
+    border:1px solid rgb(207, 217, 222);
+
+}
+
+.apple-sign-up {
+    border:1px solid rgb(207, 217, 222);
+}
+
+.apple, .google{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 9999px;
+
+}
+
+.google span{
+    color: rgb(94, 90, 90);
+
+}
+
+.google:hover{
+    background-color: rgba(236, 248, 252, 0.692);
+
+
+}
+
+.apple svg, .google svg{
+    margin-top:12px;
+    color: black;
+}
+
+.apple:hover{
+    background-color: rgba(236, 233, 233, 0.568);
+}
+
+.or-divs-layer-one{
+    width: 300px;
+    max-width: 380px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.or-divs-layer-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.or-divs-space{
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.or-divs-space > .straight-line {
+    background-color: rgb(239, 243, 244);
+    height: 1px;
+
+}
+
+.or-divs-span-div{
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size:15px;
+
+}
+
+.confirm-to-agree{
+    margin-bottom: 16px;
+    line-height: 12px;
+    font-size: 11px;
+    width: 300px;
+    overflow-wrap: break-word;
+    line-height: 52px;
+    letter-spacing: -0.8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sign-up-phone-email-div{
+    background-color: rgb(29, 155, 240);
+    border-color: rgba(0, 0, 0, 0);
+    outline-style: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    color: rgb(255,255,255);
+    line-height: 20px;
+}
+
+.sign-up-phone-email-div:hover{
+    background-color: rgb(22, 141, 221);
+
+}
+
+.confirm-to-agree{
+    line-height: 12px;
+    font-size: 11px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    letter-spacing: 0.1px;
+}
+
+.confirm-to-agree a {
+    color: rgb(29, 155, 240);
+}
+
+.sign-in-form{
+    margin-top: 40px;
+}
+
+.have-an-account{
+    line-height: 20px;
+    font-weight: 700;
+    margin-bottom: 17px;
+    font-size: 16px;
+}
+
+.sign-in-div{
+    min-height: 36px;
+    border:1px solid rgb(207, 217, 222);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in-div:hover{
+    background-color: rgb(224, 246, 252);
+}
+
+.sign-in-div span {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700;
+    color: rgb(29, 155, 240);
+
+}
+
+.main-image {
+    width: 100%;
+    min-height: 45vh;
+    background-color: rgb(107, 201, 251);
+    padding: 0;
+    
+    background-image: url('../../../../image1.png');
+    background-size: cover;
+
+}
+
+.main-image svg{
+    height: fit-content;
+    color: white;
+    padding: 72px;
+}
+
+.main-image svg path {
+    width: 100%;
+
+}
+
+
+
+.footer nav{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 16px;
+    padding-right: 16px
+
+}
+
+.footer nav a, .twitter-inc {
+    padding-right: 16px;
+    line-height: 16px;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    color: rgb(83, 100, 113);
+}
+
+.twitter-inc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-image svg{
+    height: 50%;
+   
+}
+
+.main-image svg path {
+    width: 50%;
+    padding: 32px;
+}
+
+@media (min-width: 500px) 
+{
+    .sign-up-page{
+        
+        height: fit-content;
+    }
+    .sign-up-form-layer-one{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* margin: 0 36px; */
+    }
+    .sign-up-form-layer-two{
+        width: fit-content;
+    }
+
+    .main-image{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        /* margin: 0 36px; */
+    }
+
+    
+    .main-image svg{
+    padding: 22px;
+    }
+
+    .heading{
+        width: fit-content;
+        font-size: 64px;
+    }
+
+    .main-image svg{
+        height: 90%;
+    }
+
+    .main-image svg path {
+        width: 50%;
+    
+    }
+    
+}
+
+@media (min-width: 1000px) 
+{
+    
+    .main{
+        width: 100%;  
+        min-height: auto;
+    }
+    
+    .sign-up-form-layer-one{
+        width: 100%;
+        min-width: 45vw;
+        padding: 16px;
+    }
+    
+    .sign-up-form-layer-two{
+        width: 100%;
+        padding: 20px;
+    }
+    
+    svg {
+        padding-bottom: 12px;
+        color: rgb(29, 155, 240);
+    }
+    
+    
+    .sign-up-page{
+        padding: 0;
+        margin: 0;
+    }
+
+    .sign-up-page{
+        width: 100%;
+        height: 700px;
+        border: none;
+    }
+
+    .sign-up-form-layer-one{
+        width: 52%;
+    }
+
+
+    .main-image{
+        width: 48%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-image svg{
+        height: 50%;
+    }
+
+
+
+    .main-image svg path {
+        width: 50%;
+    
+    }
+    
+
+    .heading{
+        font-size: 70px;
+    }
+
+    .join-twitter-heading{
+        font-size: 35px;
+    }
+    .main{
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+    .footer{
+        width: 100%;
+        height: 70px;
+    }
+    
+}
+
+@media (min-width: 1200px) 
+{
+    .sign-up-form-layer-one{
+        width: 50%;
+    }
+
+
+    .main-image{
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .main-image svg{
+        height: 50%;
+    }
+
+    .main-image svg path {
+        width: 50%;
+    
+    }
+}
