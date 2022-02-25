@@ -1,6 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subject, subscribeOn, Subscription } from 'rxjs';
 import { Post } from '../models/post';
@@ -15,7 +15,7 @@ import { UserService } from '../services/user.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit, OnDestroy {
 
   
   user:User;
@@ -77,7 +77,6 @@ export class HomePageComponent implements OnInit {
   }
 
   public signOut(): void {
-    
     this.userService.signOut();
   }
 
@@ -188,7 +187,9 @@ export class HomePageComponent implements OnInit {
     this.showLogOutMenu = !this.showLogOutMenu;
   }
 
-  
+  ngOnDestroy(){
+    this.allPostsSubscription.unsubscribe();
+  }
 }
 
 
