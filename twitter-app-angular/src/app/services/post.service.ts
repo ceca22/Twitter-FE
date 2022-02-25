@@ -41,8 +41,8 @@ export class PostService {
     .get<ResponsePost[]>(`${this.baseUrl}/post/current-user-posts/${id}`)
     .subscribe(
       (payload:ResponsePost[]) => {
+        
           this.currentUserPostsSubject$.next(payload);
-
           }, (error) => 
           { console.log(error);
         }
@@ -56,7 +56,7 @@ export class PostService {
       (payload:any) => {
         
         if(payload !== null){
-          // console.log("4.all posts" + JSON.stringify(payload))
+          console.log(this.allPostsSubject$);
           this.allPostsSubject$.next(payload);
         }
         

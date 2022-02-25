@@ -1,3 +1,5 @@
+import { ThrowStmt } from '@angular/compiler';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Subject, subscribeOn, Subscription } from 'rxjs';
@@ -50,14 +52,13 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     //
-    
     window.scrollTo(0,0);
     this.sharedData.initCurrentUserSubscriptions();
     this.sharedData.userObservable.subscribe(message => this.user = message);
     //posts
     this.postService.getAllPosts(this.take, this.allPosts.length);  
     this.sharedData.initAllPostsSubscriptions();
-    this.sharedData.userPostsObservable.subscribe(posts => this.userPosts = posts)
+    // this.sharedData.userPostsObservable.subscribe(posts => this.userPosts = posts)
     this.sharedData.usersPostsObservable.subscribe(posts => 
       posts.map(x => this.allPosts.push(x)));
       console.log(" " + window.innerHeight + " " + window.scrollY + " " + document.body.offsetHeight)
@@ -68,7 +69,7 @@ export class HomePageComponent implements OnInit {
 
   @HostListener("window:scroll", [])
   onScroll(): void {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       console.log("i am at the bottom");
       console.log("take: " + this.take + " allposts.length " + this.allPosts.length)
       this.postService.getAllPosts(this.take, this.allPosts.length);
@@ -76,8 +77,8 @@ export class HomePageComponent implements OnInit {
   }
 
   public signOut(): void {
+    
     this.userService.signOut();
-    this.userPostSubscription.remove;
   }
 
   onClickEveryoneCanReply(){

@@ -22,7 +22,7 @@ export class PostTemplateComponent implements OnInit{
 
   ngOnInit() {
     this.postDate = new Date(this.post.datePosted)
-    console.log(this.post.datePosted)
+    // console.log(this.post.datePosted)
     this.timeOfPost = this.getTime(this.postDate)
 	}
 

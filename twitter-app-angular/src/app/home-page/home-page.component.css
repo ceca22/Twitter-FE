@@ -173,7 +173,7 @@
     /* margin-top: 50px; */
     border-right:1px solid rgb(248 246 246);
     border-left:1px solid rgb(248 246 246);
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .main::-webkit-scrollbar { background-color:white;
@@ -1192,11 +1192,13 @@
     .main{
         min-width: 580px;
         max-width: 600px;
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
     }
 
-    .main::-webkit-scrollbar { background-color:white;
-    color: white; }
+    .main::-webkit-scrollbar { 
+        background-color:transparent;
+        color: transparent; 
+    }
 
     .navbar-icons div .birdie-icon{
         display: flex;
