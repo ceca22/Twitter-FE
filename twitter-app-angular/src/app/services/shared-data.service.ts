@@ -67,6 +67,8 @@ export class SharedDataService {
       (payload:ResponsePost[]) => {
         console.log("all posts" + payload);
         this.usersPostsSubject$.next(payload);
+
+        
       }
     )
   }
