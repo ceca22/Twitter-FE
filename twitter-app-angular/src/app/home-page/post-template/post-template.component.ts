@@ -42,35 +42,27 @@ export class PostTemplateComponent implements OnInit{
             }
 
             if(this.postDate.getHours() !== this.todayDate.getHours()){
-              if(this.todayDate.getHours() < this.postDate.getHours()){
-                this.time = ((24 - this.postDate.getHours()) + this.todayDate.getHours() ) 
-                return this.timeOfPost = this.time + "h"
+              if(this.postDate.getMinutes()===this.todayDate.getMinutes()){
+                this.time = this.todayDate.getSeconds() - this.postDate.getSeconds()
+                return this.timeOfPost = this.time + "s"
+              } else if(this.postDate.getMinutes()!==this.todayDate.getMinutes()) {
+                this.time = this.todayDate.getMinutes() - this.postDate.getMinutes()
+                return this.timeOfPost = this.time + "m"
               }
-              if(this.todayDate.getHours() > this.postDate.getHours()){
-                this.time = ((this.todayDate.getHours() - this.postDate.getHours())) 
-                if(this.time > 23){
-                this.time = ((this.postDate.getHours() - this.todayDate.getHours()) *(-1) ) 
-                return this.timeOfPost = "1d"
-                }
-                return this.timeOfPost = this.time + "h"
-              }
-            }
-            // if(this.postDate.getHours()!==this.todayDate.getHours()){
-            //   if(this.todayDate.getMinutes() < this.postDate.getMinutes()){
-            //   this.time = ((60 - this.postDate.getMinutes()) + this.todayDate.getMinutes() ) 
-            //   return this.timeOfPost = this.time + "m"
-            // }
-            // if(this.todayDate.getMinutes() > this.postDate.getMinutes()){
-            //   this.time = ((60 - this.postDate.getMinutes()) + this.todayDate.getMinutes() ) 
-            //   if(this.time > 59){
-            //   this.time = ((this.postDate.getHours() - this.todayDate.getHours()) *(-1) ) 
-            //   return this.timeOfPost = this.time + "h"
-            //   }
-            //   return this.timeOfPost = this.time + "m"
-            // }
-            
+              // if(this.todayDate.getHours() < this.postDate.getHours()){
+              //   this.time = ((24 - this.postDate.getHours()) + this.todayDate.getHours() ) 
+              //   return this.timeOfPost = this.time + "h"
+              // }
+              // if(this.todayDate.getHours() > this.postDate.getHours()){
+              //   this.time = ((this.todayDate.getHours() - this.postDate.getHours())) 
+              //   if(this.time > 23){
+              //   this.time = ((this.postDate.getHours() - this.todayDate.getHours()) *(-1) ) 
+              //   return this.timeOfPost = "1d"
+              //   }
+              //   return this.timeOfPost = this.time + "h"
+              // }
               
-            // }
+            }
           }
           if( this.todayDate.getDate() - this.postDate.getDate() === 1){
             if(this.todayDate.getHours() < this.postDate.getHours()){
