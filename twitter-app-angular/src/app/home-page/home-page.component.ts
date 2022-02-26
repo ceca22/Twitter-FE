@@ -28,7 +28,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
   userPostSubscription:Subscription;
   // all users posts
   allPosts:ResponsePost[]=[];
-  allPostsSubscription:Subscription;
   //
   @ViewChild('fileImageInput')
   fileImageInputVar: any;
@@ -52,15 +51,18 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     //
-    window.scrollTo(0,0);
+    // window.scrollTo(0,0);
     this.sharedData.initCurrentUserSubscriptions();
     this.sharedData.userObservable.subscribe(message => this.user = message);
     //posts
-    this.postService.getAllPosts(this.take, this.allPosts.length);  
+    // this.postService.getAllPosts(this.take, this.allPosts.length);  
+    this.postService.getAll();
     this.sharedData.initAllPostsSubscriptions();
     // this.sharedData.userPostsObservable.subscribe(posts => this.userPosts = posts)
-    this.sharedData.usersPostsObservable.subscribe(posts => 
-      posts.map(x => this.allPosts.push(x)));
+    // this.sharedData.usersPostsObservable.subscribe(posts => 
+    //   posts.map(x => this.allPosts.push(x)));
+      this.sharedData.usersPostsObservable.subscribe(posts => 
+       this.allPosts = posts);
       console.log(" " + window.innerHeight + " " + window.scrollY + " " + document.body.offsetHeight)
       console.log("vo ng oninit" + this.take, this.allPosts.length)
     this.sharedData.initCurrentUserSubscriptions();
@@ -78,6 +80,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   public signOut(): void {
     this.userService.signOut();
+    
   }
 
   onClickEveryoneCanReply(){
@@ -96,6 +99,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
         // Use traditional 'for loops' for IE 11
         for(const mutation of mutationsList) {
           if (mutation.type === 'characterData'){
+            console.log("inner text" + span.innerText);
             console.log('A character is modified.');
             console.log(observer)
           } else
@@ -187,9 +191,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.showLogOutMenu = !this.showLogOutMenu;
   }
 
-  ngOnDestroy(){
-    this.allPostsSubscription.unsubscribe();
-  }
+ ngOnDestroy(): void {
+    this.sharedData.usersPostsSubscription.unsubscribe();
+ }
+
 }
 
 

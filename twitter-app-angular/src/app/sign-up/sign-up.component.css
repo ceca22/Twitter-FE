@@ -312,7 +312,9 @@ a {
 
     
     .main-image svg{
-    padding: 22px;
+        width: 50%;
+        height: 60%;
+        padding: 22px;
     }
 
     .heading{
@@ -374,7 +376,7 @@ a {
 
     .main-image{
         width: 48%;
-        height: auto;
+        min-height: 1000px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -421,7 +423,7 @@ a {
 
     .main-image{
         width: 50%;
-        height: auto;
+        min-height: 1000px;
         display: flex;
         flex-direction: row;
         align-items: center;
